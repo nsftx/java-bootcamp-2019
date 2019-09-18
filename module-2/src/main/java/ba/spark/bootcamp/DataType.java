@@ -2,7 +2,7 @@ package ba.spark.bootcamp;
 
 public class DataType {
     public static void main(String[] args) {
-        boolean isTrue = true ;
+        boolean isTrue = true;
         boolean isFalse = false;
 
         System.out.println(" First one is: " + isTrue);
@@ -12,10 +12,10 @@ public class DataType {
         System.out.println(" Default value is: " + defaultValue);
 
         byte smallOne = 25;
-        int hugOne = 2568;
+        int hugeOne = 2568;
 
         System.out.println(" Byte variable " + smallOne);
-        System.out.println(" int variable " + hugOne);
+        System.out.println(" int variable " + hugeOne);
 
         int number = 0;
         float decimal = 0;
@@ -30,6 +30,6 @@ public class DataType {
         String second = new String(" Hello world!");
 
         System.out.println(" First: " + first);
-        System.out.println( " Second: " + second);
+        System.out.println(" Second: " + second);
     }
 }
