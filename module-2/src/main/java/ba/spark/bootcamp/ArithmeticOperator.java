@@ -1,6 +1,6 @@
 package ba.spark.bootcamp;
 
-public class DateOperator {
+public class ArithmeticOperator {
     public static void main(String[] args) {
 
         byte number1 = 45;
