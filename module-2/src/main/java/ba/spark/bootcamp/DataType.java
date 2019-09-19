@@ -18,18 +18,18 @@ public class DataType {
         System.out.println(" int variable " + hugeOne);
 
         int number = 0;
-        float decimal = 0;
+        float decimalNumber = 0;
 
         System.out.println(" Int default value is: " + number);
-        System.out.println(" Float default value is: " + decimal);
+        System.out.println(" Float default value is: " + decimalNumber);
 
         char letter = 'A';
         System.out.println(" Char example: " + letter);
 
-        String first = " Hello world!";
-        String second = new String(" Hello world!");
+        String firstString = " Hello world!";
+        String secondString = new String(" Hello world!");
 
-        System.out.println(" First: " + first);
-        System.out.println(" Second: " + second);
+        System.out.println(" First: " + firstString);
+        System.out.println(" Second: " + secondString);
     }
 }

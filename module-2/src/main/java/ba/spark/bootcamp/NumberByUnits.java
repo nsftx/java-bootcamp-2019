@@ -5,14 +5,14 @@ public class NumberByUnits {
 
         int number = 7452;
 
-        int tisucice = number / 1000;
-        int stotice = (number % 1000) / 100;
-        int desetice = (number % 100) / 10;
-        int jedinice = number % 10;
+        int thousands = number / 1000;
+        int hundreds = (number % 1000) / 100;
+        int tens = (number % 100) / 10;
+        int units = number % 10;
 
-        System.out.println(" Tisucice od " + number + ", su: " + tisucice);
-        System.out.println(" Stotice od " + number + ", su: " + stotice);
-        System.out.println(" Desetice od " + number + ", su: " + desetice);
-        System.out.println(" Jedinice od " + number + ", su: " + jedinice);
+        System.out.println(" Thousands part of " + number + ", is: " + thousands);
+        System.out.println(" Hundreds part of " + number + ", is: " + hundreds);
+        System.out.println(" Tens part of " + number + ", is: " + tens);
+        System.out.println(" Unit part of " + number + ", is: " + units);
     }
 }
