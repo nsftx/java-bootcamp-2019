@@ -2,3 +2,6 @@ rootProject.name = 'bootcamp'
 
 include 'module-2'
 project(':module-2').projectDir = file('module-2')
+include 'module-3'
+project(':module-3').projectDir = file('module-3')
+
