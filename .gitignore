@@ -6,4 +6,7 @@ gradle/
 .idea/
 var/log/
 
-
+.DS_Store
+.classpath
+.project
+.vscode
