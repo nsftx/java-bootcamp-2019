@@ -11,6 +11,14 @@ public class Greeting {
         this.message = message;
     }
 
+    public Greeting(String message, Boolean lowercase) {
+        if (lowercase) {
+            this.message = message.toLowerCase();
+        } else {
+            this.message = message;
+        }
+    }
+
     /**
      * @return the message
      */
