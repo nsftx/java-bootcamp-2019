@@ -16,7 +16,7 @@ public class MovieController {
 
     static {
         movies = new ArrayList<>();
-        movies.add(new Movie(1, "Jocker", 8));
+        movies.add(new Movie(1, "Joker", 8));
         movies.add(new Movie(2, "It: Chapter Two", 7));
         movies.add(new Movie(3, "Ad Astra", 7));
         movies.add(new Movie(4, "Rambo: Last blood", 6));
