@@ -1,12 +1,21 @@
 package ba.spark.bootcamp.rest.resource;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ba.spark.bootcamp.rest.model.Todo;
+import ba.spark.bootcamp.rest.model.User;
 import ba.spark.bootcamp.rest.model.UserRepository;
 
-/**
- * UserController
- */
 @RestController
 public class TodoResource {
 
@@ -17,36 +26,44 @@ public class TodoResource {
         this.repository = repository;
     }
 
-    // MISSING (1):
-    // Add `POST /users/{userId}/todos` handler method named `saveTodo`.
-    // Request body must be serialized into Todo object.
-    // Use appropriate repository method to find user by `userId`;
-    // Use appropriate `User` method to add the passed Todo object to list of User todos.
-    // The method must return `201 Created` status code and no response body
+    @PostMapping(value = "/users/{userId}/todos")
+    public ResponseEntity<Void> saveTodo(@PathVariable("userId") int userId,
+            @RequestBody Todo todo) {
+        repository.findOne(userId).addTodo(todo);
 
-    // MISSING (2):
-    // Add new handler method for `PUT /users/{userId}/todos/{id}` named `updateTodo`
-    // It must accept updated Todo object as Request body
-    // Use appropriate repository method to find user by `userId`;
-    // Use appropriate `User` method to update the existing Todo object
-    // It must return `204 No content` status code (and no response body)
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
-    // MISSING (3):
-    // Add new handler method for `GET /users/{userId}/todos` named `listTodos`
-    // It must accept an optional request parameter named `open` of Boolean type
-    // Use appropriate repository method to find the user by `userId`;
-    // Use appropriate `User` method to find all todos (by passed `open` query paramter)
-    // It will return `200 OK` status code and (un)filtered list of Todos in body.
+    @PutMapping(value = "/users/{userId}/todos/{id}")
+    public ResponseEntity<Void> updateTodo(@PathVariable("userId") int userId,
+            @PathVariable("id") int id, @RequestBody Todo todo) {
+        repository.findOne(userId).updateTodo(id, todo);
 
-    // MISSING (4):
-    // Add new handler method for `GET /users/{userId}/todos/{id}` named `getTodo`
-    // Use appropriate repository method to find user by `userId`;
-    // Use appropriate `User` method to find todo by `id`.
-    // The method must return `200 OK` status code and found `Todo` in body
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-    // MISSING (5):
-    // Add new handler method of `DELETE /users/{userId}/todos/{id}` named `deleteTodo`
-    // Use appropriate repository method to find user by `userId`;
-    // Use appropriate `User` method to delete existing todo by `id`
-    // It must return 204 No content status (no response body)
+    @GetMapping(value = "/users/{userId}/todos")
+    public ResponseEntity<List<Todo>> listTodos(@PathVariable("userId") int userId,
+            @RequestParam(name = "open", required = false) Boolean isOpen) {
+        User user = repository.findOne(userId);
+
+        return new ResponseEntity<>(user.findTodos(isOpen), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/users/{userId}/todos/{id}")
+    public ResponseEntity<Todo> getTodo(@PathVariable("userId") int userId,
+            @PathVariable("id") int id) {
+
+        Todo todo = repository.findOne(userId).findSingleTodo(id);
+
+        return new ResponseEntity<>(todo, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/users/{userId}/todos/{id}")
+    public ResponseEntity<Void> deleteTodo(@PathVariable("userId") int userId,
+            @PathVariable("id") int id) {
+        repository.findOne(userId).deleteTodo(id);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
