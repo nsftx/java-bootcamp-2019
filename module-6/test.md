@@ -18,7 +18,7 @@ Based on https://github.com/nsftx/java-bootcamp-2019/tree/beginner/module-6/todo
 
 ### 2.1. Expose new `POST /users/{userId}/todos` API route by implementing controller method named `saveTodo`. _(15 points)_
 
-### 2.2. Expose new `GET /users/{userId}/todos/{id}` API route by implementing controller method named `saveTodo`. _(15 points)_
+### 2.2. Expose new `GET /users/{userId}/todos/{id}` API route by implementing controller method named `getTodo`. _(15 points)_
 
 ### 2.3. Expose new `PUT /users/{userId}/todos/{id}` API route by implementing controller method named `updateTodo`. _(20 points)_
 
