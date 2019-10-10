@@ -10,7 +10,7 @@ In your own words, answer the following:
 
 ### 1.3. When would it be appropriate for HTTP server to return a `201` response code? _(5 points)_
 
-### 1.4. How would an HTTP server _singal_ a malformed request body to the client in a response? _(5 points)_
+### 1.4. How would an HTTP server _signal_ a malformed request body to the client in a response? _(5 points)_
 
 ## 2. Practice
 
