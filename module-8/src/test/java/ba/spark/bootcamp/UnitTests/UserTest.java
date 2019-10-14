@@ -8,16 +8,20 @@ import org.junit.Test;
 public class UserTest {
 
     @Test
-    public void shouldGetUsersFirstName(){
+    public void shouldGetUsersFirstName() {
         User user = new User("Ana", "Kralj");
 
-        Assert.assertEquals("Ana", user.getFirstName());
+        String userName = user.getFirstName();
+
+        Assert.assertEquals("Ana", userName);
     }
 
     @Test
-    public void shouldGetWrongUsersFirstName(){
+    public void shouldGetWrongUsersFirstName() {
         User user = new User("Ana", "Kralj");
 
-        Assert.assertEquals("Luka", user.getFirstName());
+        String userName = user.getFirstName();
+
+        Assert.assertEquals("Luka", userName);
     }
 }
