@@ -10,7 +10,7 @@ public class Calculator {
         return number1 * number2;
     }
 
-    public static float quotient(float number1, float number2){
+    public static float quotient(float number1, float number2) {
         return number1 / number2;
     }
 }
