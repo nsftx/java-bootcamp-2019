@@ -1,4 +1,4 @@
-package ba.spark.bootcamp.unitTests;
+package ba.spark.bootcamp.UnitTests;
 
 public class User {
 

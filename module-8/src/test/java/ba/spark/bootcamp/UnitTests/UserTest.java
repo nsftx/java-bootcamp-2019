@@ -1,7 +1,6 @@
 package ba.spark.bootcamp.UnitTests;
 
 
-import ba.spark.bootcamp.unitTests.User;
 import org.junit.Assert;
 import org.junit.Test;
 
