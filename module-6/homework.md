@@ -7,7 +7,7 @@ Create a new SpringBoot application that will expose an HTTP API with help of Sp
   * String name - the name of the movie
   * int rating - the rating of the movie (from 1 to 10)
 * Create getter methods for all member variables
-* Create a contructor that takes three parameters and initializes a new Movie object
+* Create a constructor that takes three parameters and initializes a new Movie object
 
 ## 2. MovieController
 * Create a new rest controller class for resource Movie called MovieController,
@@ -43,7 +43,7 @@ GET http://localhost:<port>/movies
 [
 	{
 	  "id": 1,
-	  "name": "Jocker",
+	  "name": "Joker",
 	  "rating": 8
 	},
 	{
